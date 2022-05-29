@@ -46,6 +46,19 @@ func (rate *MinuteWindow) current() int {
 	return 0
 }
 
+func (rate *MinuteWindow) previous() (int, int) {
+	return 0, 0
+}
+
+func (rate *SecondWindow) current() int {
+	return 0
+}
+
+func (rate *SecondWindow) previous() (int, int) {
+	return 0, 0
+}
+
+
 func NewSlidingWindow(dataStore datastore.DataStore, requestLimit uint32, requestRate TimeWindow)  SlidingWindowLimiter {
 	return &SlidingWindowLimiterImpl{
 		DataStore: dataStore,
@@ -56,7 +69,6 @@ func NewSlidingWindow(dataStore datastore.DataStore, requestLimit uint32, reques
 
 // Allow checks if request is allowed
 func (sw *SlidingWindowLimiterImpl) Allow() bool {
-	sw.RequestRate.Current()
 	return true
 }
 
