@@ -1,6 +1,6 @@
 package slidingwindow
 
-import "github.com/amit.katyal/rate-limiter/datastore"
+import "github.com/amitkatyal/rate-limiter/pkg/datastore"
 
 type WindowStatus struct {
 	Allow bool
