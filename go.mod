@@ -1,5 +1,7 @@
-module github.com/amit.katyal/rate-limiter
+module github.com/amitkatyal/rate-limiter
 
 go 1.17
 
-replace github.com/amit.katyal/rate-limiter/pkg/datastore => ../pkg
+replace (
+	github.com/amitkatyal/rate-limiter/pkg/datastore => ../rate-limiter
+)
